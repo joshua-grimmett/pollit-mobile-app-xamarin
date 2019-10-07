@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PollIt.App">
+    <Application.Resources>
+        <ResourceDictionary Source="ThemeResources/LightTheme.xaml">
+            
+            <Style TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="{DynamicResource PageBackgroundColor}"/>
+            </Style>
+
+            <Style TargetType="Picker">
+                <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
+                <Setter Property="BackgroundColor" Value="{DynamicResource ForegroundColor}"/>
+            </Style>
+            
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{DynamicResource NavigationBarColor}"/>
+                <Setter Property="BarTextColor" Value="{DynamicResource PrimaryTintColor}"/>
+            </Style>
+
+            <Style TargetType="Switch">
+                <Setter Property="OnColor" Value="{DynamicResource PrimaryColor}"/>
+                <Setter Property="ThumbColor" Value="{DynamicResource PrimaryDarkColor}"/>
+            </Style>
+
+            <Style
+                TargetType="Entry">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="{DynamicResource ForegroundColor}"/>
+                                <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Invalid">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="#ff7c73"/>
+                                <Setter Property="TextColor" Value="{DynamicResource InvertTextColor}"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </Setter>
+            </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="FontFamily" Value="Roboto"/>
+                <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
+            </Style>
+
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}"/>
+                <Setter Property="TextColor" Value="{DynamicResource PrimaryTintColor}"/>
+            </Style>
+            
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

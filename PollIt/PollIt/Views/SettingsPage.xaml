@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PollIt.Views.SettingsPage"
+             BackgroundColor="{DynamicResource PageBackgroundColor}">
+    <ContentPage.Content>
+        <StackLayout Padding="60">
+
+            <Label FontSize="Title" Text="Account"/>
+
+            <Grid>
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Label
+                    Text="Username:"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    HorizontalOptions="Start"/>
+                <Label
+                    Text="{Binding Username}"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    HorizontalOptions="End"/>
+
+
+                <Label
+                    Text="Theme:"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    HorizontalOptions="Start"/>
+
+                <Picker
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    SelectedIndexChanged="OnPickerSelectionChanged" 
+                    ItemsSource="{Binding Themes}">
+                    <Picker.ItemDisplayBinding>
+                        <Binding Path="Title"/>
+                    </Picker.ItemDisplayBinding>
+                </Picker>
+
+                <Button
+                  Text="Logout"
+                  Grid.Row="2"
+                  VerticalOptions="Center"
+                  Clicked="OnLogoutClicked"/>
+
+            </Grid>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

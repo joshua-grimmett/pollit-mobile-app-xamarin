@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "497743796042",
+    "firebase_url": "https://polls-e535c.firebaseio.com",
+    "project_id": "polls-e535c",
+    "storage_bucket": "polls-e535c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:497743796042:android:d28b32bfb614a9852993b3",
+        "android_client_info": {
+          "package_name": "com.jooshua.PollIt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "497743796042-l1f1s8rv2bfsb0nv2u91g7uei724dv7r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAO3D80liS3gT_eVo9daeQueShbE45bB6U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "497743796042-l1f1s8rv2bfsb0nv2u91g7uei724dv7r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

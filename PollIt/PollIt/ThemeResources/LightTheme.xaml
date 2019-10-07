@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="PollIt.ThemeResources.LightTheme">
+    <!-- Cornflower Blue -->
+    <Color x:Key="PrimaryColor">#4C92EB</Color>
+    
+    <!-- San Marino -->
+    <Color x:Key="PrimaryDarkColor">#3c5ba6</Color>
+
+    <!-- White -->
+    <Color x:Key="PrimaryTintColor">#FFFFFF</Color>
+    
+    <!-- Cornflower Blue -->
+    <Color x:Key="NavigationBarColor">#4C92EB</Color>
+    
+    <!-- White -->
+    <Color x:Key="PageBackgroundColor">#FFFFFF</Color>
+
+    <!-- White -->
+    <Color x:Key="ForegroundColor">#FCFCFC</Color>
+
+    <!-- Dark Gray -->
+    <Color x:Key="PrimaryTextColor">#171717</Color>
+    
+    <!-- Mid-Dark Gray -->
+    <Color x:Key="SecondaryTextColor">#292929</Color>
+
+    <!-- Black -->
+    <Color x:Key="InvertTextColor">#F5F5F5</Color>
+</ResourceDictionary>

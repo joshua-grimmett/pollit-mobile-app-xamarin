@@ -1,0 +1,5 @@
+PollIt/.vs
+**/bin
+**/obj
+PollIt/AppPackages
+PollIt/BundleArtifacts

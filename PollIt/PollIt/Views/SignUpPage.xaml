@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PollIt.Views.SignUpPage"
+             BackgroundColor="{DynamicResource PageBackgroundColor}">
+    <ContentPage.Content>
+        <StackLayout
+            Margin="40">
+            <Entry
+                Placeholder="E-mail"
+                x:Name="EmailInput"
+                Keyboard="Email"/>
+            <Entry
+                Placeholder="Password"
+                IsPassword="True"
+                x:Name="PasswordInput"/>
+            <Entry
+                Placeholder="Confirm password"
+                IsPassword="True"
+                x:Name="ConfirmPasswordInput"/>
+            <Button
+                Text="Sign up"
+                Clicked="SignUp_Clicked"
+                VerticalOptions="Center"/>
+            <Label
+                Text="Already got an account?"
+                VerticalOptions="Center"
+                FontSize="Caption"/>
+            <Button
+                Text="Login"
+                Clicked="Login_Clicked"
+                VerticalOptions="Center"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

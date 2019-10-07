@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PollIt.Views.PollDetailPage"
+             BackgroundColor="{DynamicResource PageBackgroundColor}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="OK" Clicked="Cancel_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout
+            Margin="60">
+            
+            <Label
+                FontSize="Medium"
+                Text="{Binding Poll.Question}"/>
+            
+            <ListView x:Name="OptionsListView"
+                IsRefreshing="{Binding IsBusy}"
+                ItemsSource="{Binding Poll.Options}"
+                HeightRequest="100">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Grid
+                                    Padding="10"
+                                    HeightRequest="20">
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Label
+                                        HorizontalOptions="Start"
+                                        Grid.Column="0"
+                                        Grid.Row="0"
+                                        Text="{Binding Title}"/>
+                                    <Label
+                                        HorizontalOptions="Start"
+                                        Grid.Column="1"
+                                        Grid.Row="0"
+                                        Text="{Binding Percentage}"/>
+                                    <Label
+                                        HorizontalOptions="End"
+                                        Grid.Column="1"
+                                        Grid.Row="0"
+                                        Text="{Binding Votes}"/>
+
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    HorizontalOptions="Start"
+                    Text="Created on:"/>
+                <Label
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    HorizontalOptions="End"
+                    Text="{Binding Poll.CreationDate}"/>
+
+            </Grid>
+
+            <Button
+                Text="Share"
+                Clicked="Share_Clicked"/>
+            
+            <Button
+                Text="Delete Poll"
+                Clicked="Delete_Clicked"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

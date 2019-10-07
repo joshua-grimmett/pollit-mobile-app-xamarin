@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PollIt.Views.EditPollPage"
+             Title="{Binding Title}"
+             BackgroundColor="{DynamicResource PageBackgroundColor}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked"/>
+        <ToolbarItem Text="Save" Clicked="Save_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+            <StackLayout
+            Margin="60"
+            Spacing="20">
+                <Entry
+                Placeholder="Enter poll question"
+                FontSize="Large"
+                Text="{Binding Poll.Question}"/>
+                <Label
+                Text="Options"
+                FontSize="Large"/>
+                <ListView
+                x:Name="OptionsList"
+                ItemsSource="{Binding Poll.Options}"
+                ItemTapped="AddOption_Clicked"
+                SelectionMode="None"
+                HeightRequest="30">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid
+                                Padding="5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Entry
+                                    Text="{Binding Title}"
+                                    Grid.Column="0"
+                                    HorizontalOptions="Start"/>
+
+                                    <Button 
+                                    Text="X"
+                                    WidthRequest="40"
+                                    Grid.Column="1"
+                                    HorizontalOptions="End"
+                                    Clicked="RemoveOption_Clicked"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Grid
+                    Margin="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Label 
+                    Text="Private"
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    HorizontalOptions="Start"/>
+
+                    <Switch
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    HorizontalOptions="End"
+                    IsToggled="{Binding Poll.IsPrivate}"/>
+
+
+                    <Label 
+                    Text="Enabled"
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    HorizontalOptions="Start"/>
+
+                    <Switch
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    HorizontalOptions="End"
+                    IsToggled="{Binding Poll.Enabled}"/>
+
+                    <Label
+                        Text="Close date"
+                        Grid.Column="0"
+                        Grid.Row="2"
+                        HorizontalOptions="Start"/>
+
+                    <DatePicker
+                        Date="{Binding Poll.CloseDate}"
+                        Grid.Column="1"
+                        Grid.Row="2"
+                        HorizontalOptions="FillAndExpand"/>
+                    
+                </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
